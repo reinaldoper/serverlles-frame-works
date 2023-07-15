@@ -1,14 +1,32 @@
 {
-  "builds": [
+  "rewrites": [
     {
-      "src": "full-stack/back-end/src/*.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
+      "source": "/items",
+      "destination": "/full-stack/back-end/src/getItems.js"
+    },
     {
-      "src": "/(.*)",
-      "dest": "full-stack/back-end/src/$1.js"
+      "source": "/items",
+      "destination": "/full-stack/back-end/src/updateItem.js"
+    },
+    {
+      "source": "/items",
+      "destination": "/full-stack/back-end/src/deleteItem.js"
+    },
+    {
+      "source": "/items",
+      "destination": "/full-stack/back-end/src/createItem.js"
+    },
+    {
+      "source": "/getHeadcount",
+      "destination": "/full-stack/back-end/src/getHeadcount.js"
+    },
+    {
+      "source": "/getTurnover",
+      "destination": "/full-stack/back-end/src/getTurnover.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
