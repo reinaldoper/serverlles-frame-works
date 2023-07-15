@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Employee" ALTER COLUMN "hireDate" SET DATA TYPE TEXT,
+ALTER COLUMN "terminationDate" SET DATA TYPE TEXT;

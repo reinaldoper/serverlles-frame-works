@@ -1,0 +1,52 @@
+service: backend
+
+provider:
+  name: azure
+  runtime: nodejs16.x
+
+functions:
+  getItems:
+    handler: src/getItems.getItems
+    events:
+      - httpApi:
+          path: /items
+          method: GET
+
+  updateItem:
+    handler: src/updateItem.updateItem
+    events:
+      - httpApi:
+          path: /items
+          method: PUT
+
+  deleteItem:
+    handler: src/deleteItem.deleteItem
+    events:
+      - httpApi:
+          path: /items
+          method: DELETE
+
+  createItem:
+    handler: src/createItem.createItem
+    events:
+      - httpApi:
+          path: /items
+          method: POST
+
+  getHeadcount:
+    handler: src/getHeadcount.getHeadcount
+    events:
+      - httpApi:
+          path: /getHeadcount
+          method: POST
+
+  getTurnover:
+    handler: src/getTurnover.getTurnover
+    events:
+      - httpApi:
+          path: /getTurnover
+          method: POST
+
+plugins:
+  - serverless-offline
+
