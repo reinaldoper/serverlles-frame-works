@@ -1,19 +1,19 @@
 {
   "builds": [
     {
-      "src": "back-end/src/*.js",
+      "src": "full-stack/back-end/src/*.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/.*",
-      "dest": "src/index.js",
+      "dest": "full-stack/back-end/src/index.js",
       "methods": ["GET", "POST", "PUT", "DELETE"]
     },
     {
       "src": "/(.*)",
-      "dest": "src/index.js"
+      "dest": "full-stack/back-end/src/index.js"
     }
   ]
 }
